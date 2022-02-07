@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/screen/contact.dart';
+import 'package:flutter_basic/screen/stateful.dart';
 
 import 'screen/home.dart';
 
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // theme: ThemeData(primarySwatch: Colors.indigo),
       title: 'Flutter App',
-      home: HomeScreen(),
+      home: StatefulScreen(),
     );
   }
 }
