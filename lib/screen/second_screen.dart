@@ -3,9 +3,18 @@ import 'package:flutter_basic/screen/contact.dart';
 import 'package:flutter_basic/screen/first_screen.dart';
 
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({Key? key}) : super(key: key);
+  // const SecondScreen({Key? key}) : super(key: key);
+  static String id = '/second screen';
+  // String name;
 
-  build(BuildContext context) {
+  // SecondScreen({required this.name,});
+  @override
+  Widget build(BuildContext context) {
+    // if(ModalRoute.of(context)!.settings.arguments != null){
+    //   final Map arguments = ModalRoute.of(context)!.settings.arguments as Map;
+    //   print(arguments['name']);
+    //   print(arguments['founder']);
+    // }
     return Scaffold(
       appBar: AppBar(
         title: Text('Second Screen'),
@@ -15,8 +24,10 @@ class SecondScreen extends StatelessWidget {
           child: ElevatedButton(
             child: Text('Go back'),
             onPressed: (){
-              Navigator.pop(context);
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Contact()));
+              Navigator.pop(context, true);
+              // Navigator.pop(context);
+              // Navigator.push(context, MaterialPageRoute(builder: (context) => Contact()));
+              // print(name);
             },
           ),
       ),

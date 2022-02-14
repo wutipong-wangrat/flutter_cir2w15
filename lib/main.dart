@@ -21,7 +21,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // theme: ThemeData(primarySwatch: Colors.indigo),
       title: 'Flutter App',
-      home: SecondScreen(),
+      // home: SecondScreen(),
+      // initialRoute: '/firstscreen',
+      initialRoute: '/firstscreen',
+      routes: {
+        '/':(context) => HomeScreen(),
+        '/firstscreen':(context) => FirstScreen(),
+        SecondScreen.id:(context) => SecondScreen(),
+        // '/contact':(context) => Contact(),
+        Contact.id:(context) => Contact(),
+        // '/home':(context) => HomeScreen(),
+        HomeScreen.id:(context) => HomeScreen(),
+      },
     );
   }
 }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/screen/second_screen.dart';
 
+import 'contact.dart';
+
 class FirstScreen extends StatelessWidget {
+  static String id = '/firstscreen';
   const FirstScreen({Key? key}) : super(key: key);
 
-  build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Phalakorn app'),
@@ -14,8 +17,15 @@ class FirstScreen extends StatelessWidget {
         // child: Text('Phalakorn is CEO')
         child: ElevatedButton(
           child: Text('Go to Second Screen'),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen(),));
+          onPressed: ()async{
+            bool status = await Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen()));
+            print(status);
+            // Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen(),));
+            // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SecondScreen(name:"Phalakorn")));
+            // Navigator.pushNamed(context, SecondScreen.id,arguments: {
+            //   'name': 'Phalakorn PK',
+            //   'founder': 'CEO'
+            // });
           },
         ),
       ),
